@@ -1,4 +1,6 @@
+import java.util.ArrayDeque;
 import java.util.Deque;
+
 /**
  * Stacks are LIFO - last in, first out, like a stack of plates or books, or the puzzle game "Towers of Hanoi".
  * They are used in algorithms where it is needed to keep track of the ordering in which the elements were inserted.
@@ -12,7 +14,7 @@ import java.util.Deque;
  */
 public class Lab {
     /**
-     * Implement and return some class that implements Deque, such as ArrayDeque, which contains all the functionality
+     * Implement and return an instance of a class that implements Deque, such as ArrayDeque, which contains all the functionality
      * of a Stack. This challenge will not be using the Stack class, because the Stack class is known to have a shoddy
      * implementation as it hasn't been changed since the very earliest version of Java. Deques were made to exhibit
      * the exact same behavior and are generally better.
@@ -20,7 +22,7 @@ public class Lab {
      * @return a newly instantiated Deque. Deques implement both stack and queue behavior.
      */
     public Deque<String> createNewStack(){
-        return null;
+        return new ArrayDeque<>();
     }
 
     /**
@@ -28,7 +30,7 @@ public class Lab {
      * @return the number of elements in the deque.
      */
     public int getSize(Deque<String> stack){
-        return 0;
+        return stack.size();
     }
 
     /**
@@ -38,6 +40,7 @@ public class Lab {
      * @param item a String to be added to the deque.
      */
     public void addToTopOfStack(Deque<String> stack, String item){
+        stack.push(item);
     }
 
     /**
@@ -47,7 +50,7 @@ public class Lab {
      * @return the value popped from the top of the deque.
      */
     public String removeFromTopOfStack(Deque<String> stack){
-        return "";
+        return stack.pop();
     }
     /**
      * Peek the value at the top of a deque.
@@ -57,6 +60,6 @@ public class Lab {
      * @return the value peeked from the top of the deque.
      */
     public String getTopOfStackWithoutRemoving(Deque<String> stack){
-        return "";
+        return stack.peek();
     }
 }
